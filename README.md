@@ -58,26 +58,27 @@ The objective of this project is to create a user-friendly web application that 
 
 1. **Clone the repository:**
 
-```bash
 git clone https://github.com/your_username/energy-visualization-app.git
 
 Clone this repository.
 
 Install dependencies:
 
-```bash
-cd energy-viz-app
-npm install  # or yarn install
-pip install -r requirements.txt```
+2. **Install front-end dependencies**
+cd Frontend/frontend
+npm install
 
-Start the development server:
+3. **Install back-end dependencies**
+cd ../../Backend
+pip install -r requirements.txt
 
-```bash
-npm start
-Use code with caution.
-(or yarn start)```
+4. **Start Fronend and Backend Servers**
+Start the React development server:
+npm run dev
+Start the Backend server:
+python run.py
 
-The application should now be running at http://localhost:3000 (or a different port if specified).
+The applications should now be running at 2 differnt ports (or a different port if specified, so accordingly add backend end point into Utils file of frontend app).
 
 ## User Interface
 
