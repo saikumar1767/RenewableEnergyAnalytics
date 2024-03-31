@@ -72,10 +72,23 @@ The objective of this project is to create a user-friendly web application that 
    - To start the server, follow below commands:
         - cd app
         - python run.py
-   - If you want to create a db(like Users db in my case), insert necessary SQL commands and run:
-        - cd app (If you are not in app folder)
-        - python createdb.py
-        - 
+   - If you want run your own instance from scratch:
+      - To create a db(like Users db in my case), insert necessary SQL commands and run:
+           - cd app (If you are not in app folder)
+           - python createdb.py
+           - Now, to insert a record user record, you can manually send username, email and password in body of POST API (URL: localhost:<port_no>/register)
+             using app like Postman API to mimic frontend registration (Because password will be hashed and stored in table).
+      - To add dummy data, add data into energyData.csv which has following Columns:
+           - timestamp (In UTC format)
+           - username (unique and not null)
+           - energy_source (Can be Solar, Wind, Hydro, Other).
+           - consumption (Units in KWh)
+           - generation (Units in KWh)
+      - Once dummy data is added, run below command, to insert data into energy_data table:
+           - cd app (If you are not in app folder)
+           - python populate_db.py (Inserts csv data into energy_data table).
+      - Now navigate to app folder and run run.py to start the Backend Server.
+
 
 4. **Start Frontend and Backend Servers**
    - Start the React development server:
