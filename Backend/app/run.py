@@ -151,6 +151,10 @@ def filter_energy_data():
     data = [{'username': entry.username, 'timestamp': entry.timestamp, 'energy_source': entry.energy_source, 'consumption': entry.consumption, 'generation': entry.generation} for entry in energy_data]
     return jsonify(data), 200
 
+@app.route('/')
+def home_page():
+    return "Server is Up and running!"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
