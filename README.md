@@ -1,4 +1,4 @@
-# Energy Consumption and Generation Visualization Web Application
+# Energy Consumption and Generation Visualization Web Application Documentation
 
 This project aims to develop a web application that visualizes energy consumption and generation data, providing users with insights into renewable energy usage and trends. Users can register, log in, and view personalized visualizations of energy data.
 
