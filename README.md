@@ -64,15 +64,16 @@ The objective of this project is to create a user-friendly web application that 
 
 2. **Install front-end dependencies**
    - cd Frontend/frontend
-   - npm install
+   - remove node_modules folder if exists.
+   - run: npm install
 
-3. **Install back-end dependencies**
+4. **Install back-end dependencies**
    - Navigate to Backend Folder.
    - Run the command: pip install -r requirements.txt
    
-4. **4.1 Start Frontend Server**
-   - Start the React development server:
-   - npm run dev
+5. **4.1 Start Frontend Server**
+   - To start the React development server navigate to Frontend/frontend folder
+   - Now, run: npm run dev
    
    **4.2 Start Backend Server**
    - To start the backend server navigate to Backend folder and follow below commands:
