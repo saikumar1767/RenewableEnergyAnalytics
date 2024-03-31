@@ -25,7 +25,7 @@ The objective of this project is to create a user-friendly web application that 
    - Implement dynamic charts and graphs for visualizing energy data, with filters for different energy sources and time frames.
 
 3. **Back-End:**
-   - Use Python with Flask to create a RESTful API.
+   - Use Python with Flask and SQLite3 to create a RESTful API.
    - Manage user authentication, energy data retrieval, and filtering by date range and energy source.
    - Store user information and energy data securely in a database.
 
@@ -71,7 +71,11 @@ The objective of this project is to create a user-friendly web application that 
    - Run the command: pip install -r requirements.txt
    - To start the server, follow below commands:
         - cd app
-        - Python run.py
+        - python run.py
+   - If you want to create a db(like Users db in my case), insert necessary SQL commands and run:
+        - cd app (If you are not in app folder)
+        - python createdb.py
+        - 
 
 4. **Start Frontend and Backend Servers**
    - Start the React development server:
