@@ -11,39 +11,39 @@ The objective of this project is to create a user-friendly web application that 
 - Interact with dynamic charts and graphs for visualizing energy data.
 - Filter data by different energy sources and time frames.
 
-## Minimum Requirements
+## Implementation:
 
 1. **User Authentication:**
-   - Implement user registration and login functionality.
-   - Secure user passwords using proper hashing techniques.
-   - Use JWT (JSON Web Tokens) or sessions for handling authenticated sessions after login.
+   - Implemented user registration and login functionality.
+   - Secured user passwords using proper hashing techniques, using bcrypt.
+   - Used JWT (JSON Web Tokens) for handling authenticated sessions after login and logs out user as token expiry is set to 1 day.
 
 2. **Front-End:**
-   - Develop the user interface with React, ensuring responsiveness across devices.
-   - Direct users to the dashboard after successful login.
-   - Include forms for user registration and login.
-   - Implement dynamic charts and graphs for visualizing energy data, with filters for different energy sources and time frames.
+   - Developed the user interface with React using Tailwind and Preline css, ensuring responsiveness across devices.
+   - Directed users to the dashboard after successful login.
+   - Included forms for user registration and login.
+   - Implemented dynamic charts and graphs for visualizing energy data, with filters for different energy sources and time frames.
 
 3. **Back-End:**
-   - Use Python with Flask and SQLite3 to create a RESTful API.
-   - Manage user authentication, energy data retrieval, and filtering by date range and energy source.
-   - Store user information and energy data securely in a database.
+   - Used Python with Flask and SQLite3 to create a RESTful API.
+   - Managed user authentication, energy data retrieval, and filtering by date range and energy source.
+   - Stored user information and energy data securely in a database.
 
 4. **Data Visualization:**
-   - Integrate a JavaScript library (like HighCharts, D3.js, or Chart.js) with React for creating interactive charts and graphs.
-   - Visualizations should offer insights into consumption vs. generation trends, highlighting renewable energy contributions.
+   - Integrated a JavaScript library HighCharts, Chart.js with React for creating interactive charts and graphs.
+   - Different Axes charts helps in visualization and offer insights into consumption vs. generation trends, highlighting renewable energy contributions.
 
 5. **Deployment:**
-   - Include a Dockerfile for containerization to facilitate easy setup and deployment.
-   - Ensure the application runs locally with setup instructions.
+   - Included a Dockerfile for containerization to facilitate easy setup and deployment.
+   - I made sure the application runs locally with setup instructions as below.
 
 6. **AWS Deployment:**
-   - Deploy the application and database to AWS using services like Elastic Beanstalk, EC2, RDS, or DynamoDB.
-   - Implement HTTPS to secure application access.
+   - Deployed the application and database to AWS using services like Elastic Beanstalk, EC2, RDS, or DynamoDB.
+   - Implemented HTTPS to secure application access.
 
 7. **Git CI/CD Pipeline:**
-   - Utilize Git for version control with structured commits.
-   - Setup CI/CD using GitHub Actions or GitLab CI/CD for automated testing and deployment.
+   - I have utilized Git for version control with structured commits.
+   - Done the setup of CI/CD using GitHub Actions for automated testing and deployment.
 
 ## Installation and Setup
 
