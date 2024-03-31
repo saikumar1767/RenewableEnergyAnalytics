@@ -117,11 +117,7 @@ The Dockerfile enables containerization for smooth deployment. Additionally, ins
 
 ## Git CI/CD
 
-This project adheres to best practices by utilizing Git for version control and maintaining a structured commit history. A CI/CD pipeline using GitHub Actions or GitLab CI/CD is planned for automated testing and deployment, streamlining the process.
-
-## Contributing
-
-We welcome contributions to this project! You can fix the repository, make changes, and submit pull requests. Please ensure that your contributions adhere to the project's coding style and formatting guidelines.
+This project adheres to best practices by utilizing Git for version control and maintaining a structured commit history. A CI/CD pipeline using GitHub Actions is planned for automated testing and deployment, streamlining the process.
 
 ## Resources
 
