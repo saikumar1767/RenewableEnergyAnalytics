@@ -1,6 +1,6 @@
 # Energy Consumption and Generation Visualization Web Application
 
-This project is aimed at developing a web application that visualizes energy consumption and generation data, providing users with insights into renewable energy usage and trends. Users can register, log in, and view personalized visualizations of energy data.
+This project aims to develop a web application that visualizes energy consumption and generation data, providing users with insights into renewable energy usage and trends. Users can register, log in, and view personalized visualizations of energy data.
 
 ## Objective
 
@@ -58,27 +58,25 @@ The objective of this project is to create a user-friendly web application that 
 
 1. **Clone the repository:**
 
-git clone https://github.com/your_username/energy-visualization-app.git
-
-Clone this repository.
-
-Install dependencies:
+   - git clone https://github.com/your_username/energy-visualization-app.git
+   - Clone this repository.
+   - Install dependencies
 
 2. **Install front-end dependencies**
-cd Frontend/frontend
-npm install
+   - cd Frontend/frontend
+   - npm install
 
 3. **Install back-end dependencies**
-cd ../../Backend
-pip install -r requirements.txt
+   - cd ../../Backend
+   - pip install -r requirements.txt
 
-4. **Start Fronend and Backend Servers**
-Start the React development server:
-npm run dev
-Start the Backend server:
-python run.py
+4. **Start Frontend and Backend Servers**
+   - Start the React development server:
+   - npm run dev
+   - Start the Backend server:
+   - python run.py
 
-The applications should now be running at 2 differnt ports (or a different port if specified, so accordingly add backend end point into Utils file of frontend app).
+The applications should now be running at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file of the frontend app).
 
 ## User Interface
 
@@ -94,26 +92,22 @@ The Dockerfile enables containerization for smooth deployment. Additionally, ins
 
 ## Git CI/CD
 
-This project adheres to best practices by utilizing Git for version control and maintaining a structured commit history. A CI/CD pipeline using GitHub Actions or GitLab CI/CD is planned for automated testing and deployment, streamlining the development process.
+This project adheres to best practices by utilizing Git for version control and maintaining a structured commit history. A CI/CD pipeline using GitHub Actions or GitLab CI/CD is planned for automated testing and deployment, streamlining the process.
 
 ## Contributing
 
-We welcome contributions to this project! Feel free to fork the repository, make changes, and submit pull requests. Please ensure that your contributions adhere to the project's coding style and formatting guidelines.
-
-## License
-
-This project is licensed under the MIT License: https://choosealicense.com/licenses/mit/.
+We welcome contributions to this project! You can fix the repository, make changes, and submit pull requests. Please ensure that your contributions adhere to the project's coding style and formatting guidelines.
 
 ## Resources
 
-React: https://react.dev/
-Tailwind CSS: https://tailwindcss.com/docs/installation
-Preline CSS: https://preline.co/
-Flask: https://flask.palletsprojects.com/
-Docker: https://docs.docker.com/
-AWS: https://aws.amazon.com/
-Git: https://git-scm.com/
-GitHub Actions: https://docs.github.com/actions
-GitLab CI/CD: https://docs.gitlab.com/ee/ci/
-Chart.js: https://www.chartjs.org/docs/latest/getting-started/
-Highcharts: https://www.highcharts.com/
+   - React: https://react.dev/
+   - Tailwind CSS: https://tailwindcss.com/docs/installation
+   - Preline CSS: https://preline.co/
+   - Flask: https://flask.palletsprojects.com/
+   - Docker: https://docs.docker.com/
+   - AWS: https://aws.amazon.com/
+   - Git: https://git-scm.com/
+   - GitHub Actions: https://docs.github.com/actions
+   - GitLab CI/CD: https://docs.gitlab.com/ee/ci/
+   - Chart.js: https://www.chartjs.org/docs/latest/getting-started/
+   - Highcharts: https://www.highcharts.com/
