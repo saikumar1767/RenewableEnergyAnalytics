@@ -68,16 +68,14 @@ Install dependencies:
 ```bash
 cd energy-viz-app
 npm install  # or yarn install
-pip install -r requirements.txt
-Use code with caution.
-Configure the database (instructions specific to your chosen database will be provided).
+pip install -r requirements.txt```
 
 Start the development server:
 
 ```bash
 npm start
 Use code with caution.
-(or yarn start)
+(or yarn start)```
 
 The application should now be running at http://localhost:3000 (or a different port if specified).
 
