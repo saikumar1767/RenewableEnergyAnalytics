@@ -1,0 +1,11 @@
+timestamp,username,energy_source,consumption,generation
+2023-01-15T12:00:00,saikumar,solar,10,200
+2023-02-20T08:00:00,manikumar,wind,20,190
+2023-03-10T15:30:00,kiran,hydro,30,180
+2023-04-05T10:45:00,saikumar,other,40,170
+2023-05-12T13:20:00,manikumar,solar,50,160
+2023-06-25T09:10:00,kiran,wind,60,150
+2023-07-18T11:45:00,saikumar,hydro,70,140
+2023-08-30T14:15:00,manikumar,other,80,130
+2023-09-05T17:30:00,kiran,solar,90,120
+2023-10-20T16:00:00,saikumar,wind,100,110
