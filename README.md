@@ -67,8 +67,11 @@ The objective of this project is to create a user-friendly web application that 
    - npm install
 
 3. **Install back-end dependencies**
-   - cd ../../Backend
-   - pip install -r requirements.txt
+   - Navigate to Backend Folder.
+   - Run the command: pip install -r requirements.txt
+   - To start the server, follow below commands:
+        - cd app
+        - Python run.py
 
 4. **Start Frontend and Backend Servers**
    - Start the React development server:
