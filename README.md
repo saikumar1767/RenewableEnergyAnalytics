@@ -69,15 +69,25 @@ The objective of this project is to create a user-friendly web application that 
 3. **Install back-end dependencies**
    - Navigate to Backend Folder.
    - Run the command: pip install -r requirements.txt
-   - To start the server, follow below commands:
+   
+4. **4.1 Start Frontend Server**
+   - Start the React development server:
+   - npm run dev
+   
+   **4.2 Start Backend Server**
+   - To start the backend server navigate to Backend folder and follow below commands:
         - cd app
         - python run.py
+   - To directly login use these credentials (which I already added into user table):
+        - username: kiran
+        - password: Zxcvb@0987
    - If you want run your own instance from scratch:
       - To create a db(like Users db in my case), insert necessary SQL commands and run:
            - cd app (If you are not in app folder)
-           - python createdb.py
+           - python createdb.py (This creates a db named Users.db in same folder and also creates a table "user").
            - Now, to insert a record user record, you can manually send username, email and password in body of POST API (URL: localhost:<port_no>/register)
              using app like Postman API to mimic frontend registration (Because password will be hashed and stored in table).
+           - Don't use spaces in between while giving username.
       - To add dummy data, add data into energyData.csv which has following Columns:
            - timestamp (In UTC format)
            - username (unique and not null)
@@ -89,12 +99,6 @@ The objective of this project is to create a user-friendly web application that 
            - python populate_db.py (Inserts csv data into energy_data table).
       - Now navigate to app folder and run run.py to start the Backend Server.
 
-
-4. **Start Frontend and Backend Servers**
-   - Start the React development server:
-   - npm run dev
-   - Start the Backend server:
-   - python run.py
 
 The applications should now be running at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file of the frontend app).
 
