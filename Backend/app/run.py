@@ -40,10 +40,10 @@ class EnergyData(db.Model):
 
 # Function to generate JWT token
 def generate_jwt_token(username):
-     # Get the current time in UTC
+     # Getting the current time in UTC
     current_time_utc = datetime.now(timezone.utc)
 
-    # Define token expiration time (1 day from the current time)
+    # Defining token expiration time (1 day from the current time)
     expiration_time = current_time_utc + timedelta(days=1)
 
     # Create payload for the JWT token
@@ -52,11 +52,11 @@ def generate_jwt_token(username):
         'exp': expiration_time
     }
 
-    # Encode the payload to generate the JWT token
+    # Encoding the payload to generate the JWT token
     token = jwt.encode(payload, secret_key, algorithm='HS256')
-    return token  # No need to decode, token is already a string
+    return token  # No need to decode as token is already a string
 
-# Define a decorator for authentication
+# Decorator definition for authentication
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -76,24 +76,29 @@ def login_required(f):
 
 @app.route('/register', methods=['POST'])
 def register():
-    data = request.json
-    username = data.get('username')
-    email = data.get('email')
-    password = data.get('password')
+    try:
+        data = request.json
+        username = data.get('username')
+        email = data.get('email')
+        password = data.get('password')
 
-    # Check if username or email already exists
-    if User.query.filter_by(username=username).first() or User.query.filter_by(email=email).first():
-        return jsonify({"error": "Username or email already exists"}), 400
+        # Check if username or email already exists
+        if User.query.filter_by(username=username).first() or User.query.filter_by(email=email).first():
+            return jsonify({"error": "Username or email already exists"}), 400
 
-    # Hash the password
-    hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        # Hash the password
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
-    # Create and save the new user
-    new_user = User(username=username, email=email, password=hashed_password)
-    db.session.add(new_user)
-    db.session.commit()
+        # Create and save the new user
+        new_user = User(username=username, email=email, password=hashed_password)
+        db.session.add(new_user)
+        db.session.commit()
 
-    return jsonify({"message": "User registered successfully"}), 201
+        return jsonify({"message": "User registered successfully"}), 201
+    
+    except:
+        return jsonify({"message": "Internal Server Error"}), 500
+
 
 # Endpoint for user login
 @app.route('/login', methods=['POST'])

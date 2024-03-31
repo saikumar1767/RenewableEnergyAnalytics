@@ -69,25 +69,27 @@ function Header() {
           </div>
         </div>
         <div className="flex-grow" />
-        <div
-          id="navbar-collapse-with-animation"
-          className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
-        >
-          <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
-            <a
-              className="text-blue-600 hover:text-blue-500 font-bold dark:text-blue-600 dark:hover:text-blue-500 text-lg"
-              href=""
-            >
-              {`Welcome ${authState.user}!`}
-            </a>
-            <a
-              className="w-full sm:w-auto py-2 px-4 inline-flex justify-center items-center gap-x-2 text-md font-bold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              href={""}
-            >
-              <button onClick={() => handleLogout()}>Logout</button>
-            </a>
+        {authState && authState.user && (
+          <div
+            id="navbar-collapse-with-animation"
+            className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
+          >
+            <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
+              <a
+                className="text-blue-600 hover:text-blue-500 font-bold dark:text-blue-600 dark:hover:text-blue-500 text-lg"
+                href=""
+              >
+                {`Welcome ${authState.user}!`}
+              </a>
+              <a
+                className="w-full sm:w-auto py-2 px-4 inline-flex justify-center items-center gap-x-2 text-md font-bold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href={""}
+              >
+                <button onClick={() => handleLogout()}>Logout</button>
+              </a>
+            </div>
           </div>
-        </div>
+        )}
       </nav>
     </header>
   );

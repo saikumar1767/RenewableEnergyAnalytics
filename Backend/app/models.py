@@ -8,20 +8,8 @@ class User(db.Model):
 
 class EnergyData(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.String(50), db.ForeignKey('user.id'), nullable=False)
-    # Energy Consumption column in Units
-    hourly_con = db.Column(db.Float, nullable=False)
-    daily_con = db.Column(db.Float, nullable=False)
-    weekly_con = db.Column(db.Float, nullable=False)
-    monthly_con = db.Column(db.Float, nullable=False)
-    quarterly_con = db.Column(db.Float, nullable=False)
-    halfyearly_con = db.Column(db.Float, nullable=False)
-    annually_con = db.Column(db.Float, nullable=False)
-    # Energy generation column in Units
-    hourly_gen = db.Column(db.Float, nullable=False)
-    daily_gen = db.Column(db.Float, nullable=False)
-    weekly_gen = db.Column(db.Float, nullable=False)
-    monthly_gen = db.Column(db.Float, nullable=False)
-    quarterly_gen = db.Column(db.Float, nullable=False)
-    halfyearly_gen = db.Column(db.Float, nullable=False)
-    annually_gen = db.Column(db.Float, nullable=False)
+    username = db.Column(db.String(50), db.ForeignKey('user.username'), nullable=False)
+    energy_source = db.Column(db.String(50), nullable=False)
+    consumption = db.Column(db.Float, nullable=False)
+    generation = db.Column(db.Float, nullable=False)
+    timestamp = db.Column(db.DateTime, nullable=False, default=datetime.now(timezone.utc))

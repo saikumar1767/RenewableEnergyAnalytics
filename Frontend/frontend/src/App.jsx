@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { jwtDecode } from "jwt-decode";
+import Layout from "./Layout";
 
 export const AuthContext = createContext(null);
 
@@ -79,18 +80,20 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ authState, handleLogin, handleLogout }}>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Layout>
     </AuthContext.Provider>
   );
 }

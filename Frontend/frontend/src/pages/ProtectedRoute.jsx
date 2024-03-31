@@ -9,8 +9,6 @@ function ProtectedRoute({ children }) {
   } else {
     return children;
   }
-
-  // return <Outlet />;
 }
 
 export default ProtectedRoute;

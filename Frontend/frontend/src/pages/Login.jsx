@@ -6,13 +6,9 @@ import { AuthContext } from "../App";
 
 const Login = () => {
   const userRef = useRef(null);
-
   const [user, setUser] = useState("");
-
   const [pwd, setPwd] = useState("");
-
   const [errMsg, setErrMsg] = useState("");
-
   const navigate = useNavigate();
   const { handleLogin } = useContext(AuthContext);
 

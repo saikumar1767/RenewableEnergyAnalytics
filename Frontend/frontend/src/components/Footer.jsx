@@ -3,7 +3,7 @@ import Quin from "../assets/quin_logo.png";
 
 function Footer() {
   return (
-    <footer className="flex flex-col flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm bg-gray-300 text-black pt-16 pb-6 md:pt-16 md:px-40">
+    <footer className="flex flex-col flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm bg-gray-300 text-black pt-16 pb-6 shadow-lg md:pt-16 md:px-40">
       <div className="flex flex-col md:flex-row my-auto justify-center md:justify-around w-full">
         <div className="flex flex-col w-full md:w-[30%] py-6 md:py-0">
           <p className="px-6 py-2">

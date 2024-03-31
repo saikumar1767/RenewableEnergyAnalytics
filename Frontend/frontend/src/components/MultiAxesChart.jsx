@@ -28,17 +28,17 @@ function MultiAxesChart() {
   const [loading, setIsLoading] = useState(true);
   const [energyData, setEnergyData] = useState(null);
   const [chartType, setChartType] = useState(
-    localStorage.getItem("chartType") ?? "line"
+    localStorage.getItem("mchartType") ?? "line"
   );
   const [energyType, setEnergyType] = useState(
-    localStorage.getItem("energyType") ?? "all"
+    localStorage.getItem("menergyType") ?? "all"
   );
   const [dateRange, setDateRange] = useState(
-    localStorage.getItem("dateRange") ?? "all"
+    localStorage.getItem("mdateRange") ?? "all"
   );
   const [dateFilter, setDateFilter] = useState(
-    localStorage.getItem("dateFilter")
-      ? JSON.parse(localStorage.getItem("dateFilter"))
+    localStorage.getItem("mdateFilter")
+      ? JSON.parse(localStorage.getItem("mdateFilter"))
       : {
           start_datetime: null,
           end_datetime: null,
@@ -280,7 +280,7 @@ function MultiAxesChart() {
 
   const changeChartType = (event) => {
     setChartType(event.target.value);
-    localStorage.setItem("chartType", event.target.value);
+    localStorage.setItem("mchartType", event.target.value);
   };
 
   const makeAPICall = async (startDate, endDate, energyType) => {
@@ -309,8 +309,8 @@ function MultiAxesChart() {
           setEnergyData(modifiedData);
         } else {
           setEnergyData(null);
-          localStorage.removeItem("dateFilter");
-          localStorage.removeItem("energyType");
+          localStorage.removeItem("mdateFilter");
+          localStorage.removeItem("menergyType");
         }
         setIsLoading(false);
       })
@@ -319,7 +319,7 @@ function MultiAxesChart() {
 
   const changeEnergyType = async (event) => {
     setEnergyType(event.target.value);
-    localStorage.setItem("energyType", event.target.value);
+    localStorage.setItem("menergyType", event.target.value);
     await makeAPICall(
       dateFilter.start_datetime,
       dateFilter.end_datetime,
@@ -329,7 +329,7 @@ function MultiAxesChart() {
 
   const changeDateRange = async (event) => {
     setDateRange(event.target.value);
-    localStorage.setItem("dateRange", event.target.value);
+    localStorage.setItem("mdateRange", event.target.value);
     let currentDatetime = new Date();
     let startDatetime, endDatetime;
 
@@ -411,7 +411,7 @@ function MultiAxesChart() {
       end_datetime: endDateISO,
     });
     localStorage.setItem(
-      "dateFilter",
+      "mdateFilter",
       JSON.stringify({
         start_datetime: startDateISO,
         end_datetime: endDateISO,

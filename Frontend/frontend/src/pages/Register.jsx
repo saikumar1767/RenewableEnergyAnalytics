@@ -10,27 +10,20 @@ const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const Regsiter = () => {
   const userRef = useRef(null);
-  const errRef = useRef(null);
+
   const [user, setUser] = useState("");
-
   const [validName, setValidName] = useState(false);
-
   const [userFocus, setUserFocus] = useState(false);
 
   const [pwd, setPwd] = useState("");
-
   const [validPwd, setValidPwd] = useState(false);
-
   const [pwdFocus, setPwdFocus] = useState(false);
 
   const [email, setEmail] = useState("");
-
   const [validEmail, setValidEmail] = useState(false);
-
   const [emailFocus, setEmailFocus] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
-
   const [success, setSuccess] = useState(false);
 
   const navigate = useNavigate();
@@ -87,8 +80,6 @@ const Regsiter = () => {
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="w-full grid place-content-center bg-white">
         <section className="text-[1.5rem] py-14 px-2 sm:px-10 border border-gray-400 bg-zinc-100 max-w-screen-md">
-          {/* <p ref={errRef} className={`font-bold`}></p> */}
-
           <h1 className="font-bold text-[2rem] text-blue-800 mb-8">
             Register
             <br />
@@ -165,14 +156,16 @@ const Regsiter = () => {
               value={email}
               required
               aria-invalid={validEmail ? "false" : "true"}
-              onFocus={() => setUserFocus(true)}
-              onBlur={() => setUserFocus(false)}
+              onFocus={() => setEmailFocus(true)}
+              onBlur={() => setEmailFocus(false)}
               className="outline-none border border-gray-400 pl-2"
             />
 
             <p
               id="uidnote"
-              className={`${email && !validEmail ? "" : "hidden"} text-[1rem]`}
+              className={`${
+                emailFocus && email && !validEmail ? "" : "hidden"
+              } text-[1rem]`}
             >
               <Icon icon="akar-icons:info-fill" className="inline-block" />
               &nbsp; Enter a valid email.

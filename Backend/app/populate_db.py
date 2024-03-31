@@ -39,7 +39,6 @@ def create_tables():
         df = pd.read_csv('energyData.csv')
         # Iterate over rows and insert into database
         for _, row in df.iterrows():
-            print("hello")
             timestamp_str = row['timestamp']
             modified_timestamp = datetime.strptime(timestamp_str, "%Y-%m-%dT%H:%M:%S")
             energy_data = EnergyData(username=row['username'], energy_source=row['energy_source'], consumption=row['consumption'], generation=row['generation'], timestamp=modified_timestamp)
