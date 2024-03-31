@@ -60,3 +60,61 @@ The objective of this project is to create a user-friendly web application that 
 
 ```bash
 git clone https://github.com/your_username/energy-visualization-app.git
+
+Clone this repository.
+
+Install dependencies:
+
+```bash
+cd energy-viz-app
+npm install  # or yarn install
+pip install -r requirements.txt
+Use code with caution.
+Configure the database (instructions specific to your chosen database will be provided).
+
+Start the development server:
+
+```bash
+npm start
+Use code with caution.
+(or yarn start)
+
+The application should now be running at http://localhost:3000 (or a different port if specified).
+
+## User Interface
+
+The React-based user interface provides a responsive and user-friendly experience. Users can register, log in, and access the interactive dashboard where they can explore energy consumption and generation data through visually appealing charts and graphs. These visualizations offer insights into renewable energy usage trends, helping users make informed decisions regarding their energy consumption.
+
+## API and Data Storage
+
+The backend leverages Flask (a Python web framework) to create a RESTful API responsible for user authentication, data retrieval, and filtering. This API interacts with a secure database (specific instructions on database setup will be provided) to store user information and energy data.
+
+## Deployment
+
+The Dockerfile enables containerization for smooth deployment. Additionally, instructions will be provided for deploying the application and database to AWS services, ensuring scalability and security. HTTPS will be implemented to further enhance security during deployment.
+
+## Git CI/CD
+
+This project adheres to best practices by utilizing Git for version control and maintaining a structured commit history. A CI/CD pipeline using GitHub Actions or GitLab CI/CD is planned for automated testing and deployment, streamlining the development process.
+
+## Contributing
+
+We welcome contributions to this project! Feel free to fork the repository, make changes, and submit pull requests. Please ensure that your contributions adhere to the project's coding style and formatting guidelines.
+
+## License
+
+This project is licensed under the MIT License: https://choosealicense.com/licenses/mit/.
+
+## Resources
+
+React: https://react.dev/
+Tailwind CSS: https://tailwindcss.com/docs/installation
+Preline CSS: https://preline.co/
+Flask: https://flask.palletsprojects.com/
+Docker: https://docs.docker.com/
+AWS: https://aws.amazon.com/
+Git: https://git-scm.com/
+GitHub Actions: https://docs.github.com/actions
+GitLab CI/CD: https://docs.gitlab.com/ee/ci/
+Chart.js: https://www.chartjs.org/docs/latest/getting-started/
+Highcharts: https://www.highcharts.com/
