@@ -11,7 +11,6 @@ noDataToDisplay(Highcharts);
 function MultiAxesChart() {
   const token = localStorage.getItem("token");
   const months = [
-    "",
     "Jan",
     "Feb",
     "Mar",
@@ -322,27 +321,31 @@ function MultiAxesChart() {
   const changeDateRange = async (event) => {
     setDateRange(event.target.value);
     localStorage.setItem("mdateRange", event.target.value);
-    let currentDatetime = new Date();
+    let currentTimestamp = new Date();
+    let currentDatetime = new Date(
+      currentTimestamp.toISOString().slice(0, -1) + "Z"
+    );
     let startDatetime, endDatetime;
 
     switch (event.target.value) {
       case "hour":
         startDatetime = new Date(currentDatetime);
-        startDatetime.setUTCHours(currentDatetime.getUTCHours() - 1);
-        endDatetime = new Date(startDatetime);
-        endDatetime.setUTCHours(23, 59, 59, 999);
+        startDatetime.setUTCHours(startDatetime.getUTCHours() - 1); // Set to 1 hour back
+        endDatetime = new Date(currentDatetime);
         break;
       case "yesturday":
         startDatetime = new Date(currentDatetime);
-        startDatetime.setDate(currentDatetime.getDate() - 1);
-        startDatetime.setUTCHours(0, 0, 0, 0);
-        endDatetime = new Date();
+        startDatetime.setDate(startDatetime.getDate() - 1);
+        startDatetime.setUTCHours(0, 0, 0, 0); // Set to yesterday Morning
+        endDatetime = new Date(currentDatetime);
+        endDatetime.setDate(endDatetime.getDate() - 1);
+        endDatetime.setUTCHours(23, 59, 59, 999); // Set to yesterday Midnight
         break;
       case "week":
         startDatetime = new Date(currentDatetime);
-        startDatetime.setDate(currentDatetime.getDate() - 7);
+        startDatetime.setDate(startDatetime.getDate() - 7); // Set to 1 week back
         startDatetime.setUTCHours(0, 0, 0, 0);
-        endDatetime = new Date();
+        endDatetime = new Date(currentDatetime);
         break;
       case "month":
         startDatetime = new Date(
@@ -350,39 +353,49 @@ function MultiAxesChart() {
           currentDatetime.getMonth() - 1,
           1
         );
-        startDatetime.setUTCHours(0, 0, 0, 0);
-        endDatetime = new Date();
+        if (
+          startDatetime.getMonth() === 11 &&
+          currentDatetime.getMonth() === 0
+        ) {
+          startDatetime.setFullYear(currentDatetime.getFullYear() - 1);
+        }
+        startDatetime.setUTCHours(0, 0, 0, 0); // Set to 1 month back
+        endDatetime = new Date(currentDatetime);
         break;
       case "qaurter":
         // Calculate startDatetime and endDatetime for the past quarter
-        const currentMonth = currentDatetime.getMonth();
-        const quarterStartMonth = Math.floor(currentMonth / 3) * 3; // Start month of the current quarter
         startDatetime = new Date(
           currentDatetime.getFullYear(),
-          quarterStartMonth,
+          currentDatetime.getMonth() - 3,
           1
         );
-        endDatetime = new Date(
-          currentDatetime.getFullYear(),
-          quarterStartMonth + 3,
-          0
-        ); // Last day of the current quarter
+        if (startDatetime.getMonth() >= 9 && currentDatetime.getMonth() <= 2) {
+          startDatetime.setFullYear(currentDatetime.getFullYear() - 1);
+        }
         startDatetime.setUTCHours(0, 0, 0, 0);
-        endDatetime.setUTCHours(23, 59, 59, 999);
+        endDatetime = new Date(currentDatetime);
         break;
       case "halfyear":
         // Calculate startDatetime and endDatetime for the past half year
-        const startMonth = currentDatetime.getMonth() < 6 ? 0 : 6; // Start month of the current half year
-        startDatetime = new Date(currentDatetime.getFullYear(), startMonth, 1);
-        const endMonth = startMonth + 6;
-        endDatetime = new Date(currentDatetime.getFullYear(), endMonth, 0); // Last day of the current half year
+        startDatetime = new Date(
+          currentDatetime.getFullYear(),
+          currentDatetime.getMonth() - 6,
+          1
+        );
+        if (startDatetime.getMonth() >= 6 && currentDatetime.getMonth() <= 6) {
+          startDatetime.setFullYear(currentDatetime.getFullYear() - 1);
+        }
         startDatetime.setUTCHours(0, 0, 0, 0);
-        endDatetime.setUTCHours(23, 59, 59, 999);
+        endDatetime = new Date(currentDatetime);
         break;
       case "year":
-        startDatetime = new Date(currentDatetime.getFullYear() - 1, 0, 1);
+        startDatetime = new Date(
+          currentDatetime.getFullYear() - 1,
+          currentDatetime.getMonth(),
+          1
+        );
         startDatetime.setUTCHours(0, 0, 0, 0);
-        endDatetime = new Date();
+        endDatetime = new Date(currentDatetime);
         break;
       default:
         // Handle default case
