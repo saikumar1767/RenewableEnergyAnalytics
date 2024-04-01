@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 import pandas as pd
 from datetime import datetime
 
-with open("Secret_Key", "r") as file:
+with open("Secret_Key.txt", "r") as file:
     # Read the content of the file
     text_content = file.read().strip()
 

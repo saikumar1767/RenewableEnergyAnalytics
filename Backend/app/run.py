@@ -8,7 +8,7 @@ from functools import wraps
 from flask import Flask
 from flask_cors import CORS
 
-with open("Secret_Key", "r") as file:
+with open("Secret_Key.txt", "r") as file:
     # Read the content of the file
     text_content = file.read().strip()
 
