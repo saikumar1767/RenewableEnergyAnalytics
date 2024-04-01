@@ -68,14 +68,14 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="w-full grid place-content-center bg-white">
-        <section className="text-[1.5rem] py-14 px-2 sm:px-10 border rounded-lg border-gray-400 bg-zinc-100 max-w-screen-md">
+        <section className="text-[1.5rem] py-14 px-6 sm:px-10 border rounded-lg border-gray-400 bg-zinc-100 max-w-screen-md">
           <h1 className="font-bold text-[2rem] text-blue-800 mb-8">
             Login
             <br />
           </h1>
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             <label htmlFor="username" className="flex items-center">
-              Username:
+              Username
             </label>
             <input
               type="text"
@@ -85,10 +85,10 @@ const Login = () => {
               onChange={(e) => setUser(e.target.value)}
               value={user}
               required
-              className="outline-none border border-gray-400 pl-2"
+              className="outline-none border border-gray-400 pl-2 rounded-sm"
             />
             <label htmlFor="password" className="flex items-center">
-              Password:
+              Password
             </label>
             <input
               type="password"
@@ -96,7 +96,7 @@ const Login = () => {
               onChange={(e) => setPwd(e.target.value)}
               value={pwd}
               required
-              className="outline-none border border-gray-400 pl-2"
+              className="outline-none border border-gray-400 pl-2 rounded-sm"
             />
             <button
               className={`bg-black cursor-pointer text-white mt-8 btn p-1 rounded-lg`}

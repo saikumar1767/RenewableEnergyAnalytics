@@ -11,62 +11,66 @@ function Header() {
         className="m-auto w-full bg-gray-200 px-4 py-4 md:flex md:items-center md:justify-between md:px-10 lg:px-24 xl:mx-auto shadow-md sticky top-0 z-10"
         aria-label="Global"
       >
-        <div className="flex items-center justify-between">
-          <a
-            className="flex-none text-xl font-semibold text-blue-600"
-            href="#"
-            aria-label="Brand"
-          >
-            <img
-              src={Pep}
-              alt="Pep Logo"
-              style={{ width: "100px", height: "50px" }}
-            />
-          </a>
-          <h1 className="pl-20 font-bold italic whitespace-nowrap text-xl">
-            Renewable Energy Sources Dashboard (Assignment)
-          </h1>
-          <div className="md:hidden">
-            <button
-              type="button"
-              className="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              data-hs-collapse="#navbar-collapse-with-animation"
-              aria-controls="navbar-collapse-with-animation"
-              aria-label="Toggle navigation"
+        <div className="flex items-center justify-between w-[100%]">
+          <div className="flex flex-row items-center w-[90%]">
+            <a
+              className="flex-none text-xl font-semibold text-blue-600"
+              href="#"
+              aria-label="Brand"
             >
-              <svg
-                className="hs-collapse-open:hidden flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="3" x2="21" y1="6" y2="6" />
-                <line x1="3" x2="21" y1="12" y2="12" />
-                <line x1="3" x2="21" y1="18" y2="18" />
-              </svg>
-              <svg
-                className="hs-collapse-open:block hidden flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </button>
+              <img
+                src={Pep}
+                alt="Pep Logo"
+                style={{ width: "100px", height: "50px" }}
+              />
+            </a>
+            <h1 className="pl-8 font-bold italic whitespace-nowrap text-xl overflow-hidden max-w-[100%] md:max-w-[90%] text-ellipsis">
+              Renewable Energy Sources Dashboard (Assignment)
+            </h1>
           </div>
+          {authState && authState.user && (
+            <div className="md:hidden flex flex-col items-end w-[10%]">
+              <button
+                type="button"
+                className="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                data-hs-collapse="#navbar-collapse-with-animation"
+                aria-controls="navbar-collapse-with-animation"
+                aria-label="Toggle navigation"
+              >
+                <svg
+                  className="hs-collapse-open:hidden flex-shrink-0 size-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="3" x2="21" y1="6" y2="6" />
+                  <line x1="3" x2="21" y1="12" y2="12" />
+                  <line x1="3" x2="21" y1="18" y2="18" />
+                </svg>
+                <svg
+                  className="hs-collapse-open:block hidden flex-shrink-0 size-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
         <div className="flex-grow" />
         {authState && authState.user && (

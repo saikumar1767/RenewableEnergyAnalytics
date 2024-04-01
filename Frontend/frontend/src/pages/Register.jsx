@@ -106,7 +106,7 @@ const Regsiter = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="w-full grid place-content-center bg-white">
-        <section className="text-[1.5rem] py-14 px-2 sm:px-10 border rounded-lg border-gray-400 bg-zinc-100 max-w-screen-md">
+        <section className="text-[1.5rem] py-14 px-6 sm:px-10 border rounded-lg border-gray-400 bg-zinc-100 max-w-screen-md">
           <h1 className="font-bold text-[2rem] text-blue-800 mb-8">
             Register
             <br />
@@ -140,7 +140,7 @@ const Regsiter = () => {
               aria-invalid={validPwd ? "false" : "true"}
               onFocus={() => setUserFocus(true)}
               onBlur={() => setUserFocus(false)}
-              className="outline-none border border-gray-400 pl-2"
+              className="outline-none border border-gray-400 pl-2 rounded-sm"
             />
 
             <p
@@ -185,7 +185,7 @@ const Regsiter = () => {
               aria-invalid={validEmail ? "false" : "true"}
               onFocus={() => setEmailFocus(true)}
               onBlur={() => setEmailFocus(false)}
-              className="outline-none border border-gray-400 pl-2"
+              className="outline-none border border-gray-400 pl-2 rounded-sm"
             />
 
             <p
@@ -222,7 +222,7 @@ const Regsiter = () => {
               required
               aria-invalid={validPwd ? "false" : "true"}
               onFocus={() => setPwdFocus(true)}
-              className="outline-none border border-gray-400 pl-2"
+              className="outline-none border border-gray-400 pl-2 rounded-sm"
               onBlur={() => setPwdFocus(false)}
             />
 
