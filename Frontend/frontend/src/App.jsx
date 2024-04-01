@@ -67,6 +67,7 @@ function App() {
 
   // Login Handler
   const handleLogin = (data) => {
+    localStorage.clear();
     setAuthState({ isLoggedIn: true, user: data.user, token: data.token });
     localStorage.setItem("isLoggedIn", JSON.stringify(true));
     localStorage.setItem("user", JSON.stringify(data.user));
