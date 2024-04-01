@@ -34,7 +34,7 @@ The objective of this project is to create a user-friendly web application that 
    - Different Axes charts help in visualization and offer insights into consumption vs. generation trends, highlighting renewable energy contributions.
 
 5. **Deployment:**
-   - A Dockerfile for containerization was included to facilitate easy setup and deployment.
+   - Two Dockerfiles and a docker-compose file for containerization were included to facilitate easy setup and deployment.
    - I made sure the application runs locally with the setup instructions below.
 
 6. **AWS Deployment:**
@@ -71,11 +71,11 @@ The objective of this project is to create a user-friendly web application that 
    - Navigate to the Backend Folder.
    - Run the command: pip install -r requirements.txt
    
-5. **4.1 Start Frontend Server**
+5. **5.1 Start Frontend Server**
    - To start the React development server, navigate to the Frontend/frontend folder
    - Now, run: npm run dev
    
-   **4.2 Start Backend Server**
+   **5.2 Start Backend Server**
    - To start the backend server, navigate to the Backend folder and follow the below commands:
         - cd app
         - python run.py
@@ -99,7 +99,18 @@ The objective of this project is to create a user-friendly web application that 
            - cd app (If you are not in the app folder)
            - python populate_db.py (Inserts csv data into energy_data table).
       - Now navigate to the app folder and run.py to start the Backend Server.
+      - 
+6. **Deployment using Docker**
+   - Create two docker files, one inside the frontend folder for dockerizing the application's frontend and a second docker file inside the Backend folder for dockerizing the application's backend.
+   - Next, create the docker-compose file directly under the root folder (same directory as this README file).
+   - To run locally, I have installed the docker desktop and opened the command prompt, pointed it to the root directory, where the docker-compose file is located, and run the below commands:
+        - docker-compose build (To build the docker images with docker files located in the frontend and backend folder as mentioned in the docker-compose file).
+        - docker-compose up (To build and start the containers from images created as mentioned in the docker-compose.yml file).
+        - If ports are not changed, then the frontend service will be up and running on localhost port 3000, and the backend service will be up and running on localhost port 5000.
+   Note: Make sure ports 3000 and 5000 are not being used by any other service on your PC.
 
+7. **AWS Deployment**
+   - 
 
 Note: The applications should now run at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file in the frontend's src folder).
 
