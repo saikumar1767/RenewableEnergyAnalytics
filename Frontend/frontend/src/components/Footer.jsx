@@ -41,8 +41,10 @@ function Footer() {
         </div>
         <div className="flex flex-col w-full items-center md:w-[30%] py-6 md:py-0 md:pr-10">
           <ul>
-            <p className="font-semibold pb-1 px-6">United Kingdom</p>
             <a className="font-normal transition-all text-[0.9rem] hover:text-[1rem]">
+              <p className="font-semibold pb-1 px-6">United Kingdom</p>
+            </a>
+            <a className="font-normal transition-all text-[0.9rem]">
               <div className="pb-4 px-6">
                 3rd Floor, 24 Savile Row, London, W1S 2ES
               </div>

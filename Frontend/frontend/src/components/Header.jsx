@@ -24,7 +24,7 @@ function Header() {
             />
           </a>
           <h1 className="pl-20 font-bold italic whitespace-nowrap text-xl">
-            Renewable Energy Sources Analytics (Assignment)
+            Renewable Energy Sources Dashboard (Assignment)
           </h1>
           <div className="md:hidden">
             <button
