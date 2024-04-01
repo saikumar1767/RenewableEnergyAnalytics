@@ -71,11 +71,11 @@ The objective of this project is to create a user-friendly web application that 
    - Navigate to the Backend Folder.
    - Run the command: pip install -r requirements.txt
    
-5. **5.1 Start Frontend Server**
+5. **4.1 Start Frontend Server**
    - To start the React development server, navigate to the Frontend/frontend folder
    - Now, run: npm run dev
    
-   **5.2 Start Backend Server**
+   **4.2 Start Backend Server**
    - To start the backend server, navigate to the Backend folder and follow the below commands:
         - cd app
         - python run.py
