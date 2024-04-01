@@ -6,7 +6,13 @@ from datetime import datetime, timezone
 import pandas as pd
 from datetime import datetime
 
-with open("Secret_Key", "r") as file:
+# The absolute path to the directory containing this script
+current_directory = os.path.dirname(os.path.realpath(__file__))
+
+# The absolute path to the Secret_Key.txt file
+secret_key_file_path = os.path.join(current_directory, "Secret_Key.txt")
+
+with open(secret_key_file_path, "r") as file:
     # Read the content of the file
     text_content = file.read().strip()
 
