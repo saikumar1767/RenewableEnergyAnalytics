@@ -49,7 +49,7 @@ function App() {
     const user = localStorage.getItem("user");
     const token = localStorage.getItem("token");
     if (user && token) {
-      setAuthState({ isLoggedIn: true, user: JSON.parse(user), token });
+      setAuthState({ isLoggedIn: true, user, token });
     }
   }, []);
 
@@ -69,8 +69,8 @@ function App() {
   const handleLogin = (data) => {
     localStorage.clear();
     setAuthState({ isLoggedIn: true, user: data.user, token: data.token });
-    localStorage.setItem("isLoggedIn", JSON.stringify(true));
-    localStorage.setItem("user", JSON.stringify(data.user));
+    localStorage.setItem("isLoggedIn", true);
+    localStorage.setItem("user", data.user);
     localStorage.setItem("token", data.token);
   };
 

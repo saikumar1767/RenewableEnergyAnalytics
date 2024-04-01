@@ -25,7 +25,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(os.getcwd(),
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = secret_key  # Secret key for JWT token generation
 CORS(app)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
@@ -113,7 +113,6 @@ def login():
         data = request.json
         username = data.get('username')
         password = data.get('password')
-
         # Check if user exists
         user = User.query.filter_by(username=username).first()
 
@@ -180,4 +179,4 @@ def home_page():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int("5000"), debug=True)

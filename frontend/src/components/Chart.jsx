@@ -248,8 +248,7 @@ function Chart() {
       case "hour":
         startDatetime = new Date(currentDatetime);
         startDatetime.setUTCHours(currentDatetime.getUTCHours() - 1);
-        endDatetime = new Date(startDatetime);
-        endDatetime.setUTCHours(23, 59, 59, 999);
+        endDatetime = new Date();
         break;
       case "yesturday":
         startDatetime = new Date(currentDatetime);
