@@ -8,7 +8,7 @@ The objective of this project is to create a user-friendly web application that 
 
 - Register and log in securely.
 - View personalized insights into energy consumption and generation trends.
-- Interact with dynamic charts and graphs for visualizing energy data.
+- Interact with dynamic charts and graphs to visualize energy data.
 - Filter data by different energy sources and time frames.
 
 ## Implementation:
@@ -16,12 +16,12 @@ The objective of this project is to create a user-friendly web application that 
 1. **User Authentication:**
    - Implemented user registration and login functionality.
    - Secured user passwords using proper hashing techniques, using bcrypt.
-   - Used JWT (JSON Web Tokens) for handling authenticated sessions after login and logs out user as token expiry is set to 1 day.
+   - I used JWT (JSON Web Tokens) to handle authenticated sessions after login and logging out to the user as token expiry is set to 1 day.
 
 2. **Front-End:**
-   - Developed the user interface with React using Tailwind and Preline css, ensuring responsiveness across devices.
+   - Developed the user interface with React using Preline UI and Tailwind CSS, ensuring device responsiveness.
    - Directed users to the dashboard after successful login.
-   - Included forms for user registration and login.
+   - Forms for user registration and login are included.
    - Implemented dynamic charts and graphs for visualizing energy data, with filters for different energy sources and time frames.
 
 3. **Back-End:**
@@ -30,12 +30,12 @@ The objective of this project is to create a user-friendly web application that 
    - Stored user information and energy data securely in a database.
 
 4. **Data Visualization:**
-   - Integrated a JavaScript library HighCharts, Chart.js with React for creating interactive charts and graphs.
-   - Different Axes charts helps in visualization and offer insights into consumption vs. generation trends, highlighting renewable energy contributions.
+   - Integrated a JavaScript library, HighCharts, Chart.js with React for creating interactive charts and graphs.
+   - Different Axes charts help in visualization and offer insights into consumption vs. generation trends, highlighting renewable energy contributions.
 
 5. **Deployment:**
-   - Included a Dockerfile for containerization to facilitate easy setup and deployment.
-   - I made sure the application runs locally with setup instructions as below.
+   - A Dockerfile for containerization was included to facilitate easy setup and deployment.
+   - I made sure the application runs locally with the setup instructions below.
 
 6. **AWS Deployment:**
    - Deployed the application and database to AWS using services like Elastic Beanstalk, EC2, RDS, or DynamoDB.
@@ -43,7 +43,7 @@ The objective of this project is to create a user-friendly web application that 
 
 7. **Git CI/CD Pipeline:**
    - I have utilized Git for version control with structured commits.
-   - Done the setup of CI/CD using GitHub Actions for automated testing and deployment.
+   - The setup of CI/CD using GitHub Actions for automated testing and deployment is done.
 
 ## Installation and Setup
 
@@ -64,48 +64,48 @@ The objective of this project is to create a user-friendly web application that 
 
 2. **Install front-end dependencies**
    - cd Frontend/frontend
-   - remove node_modules folder if exists.
+   - remove the node_modules folder if it exists.
    - run: npm install
 
 4. **Install back-end dependencies**
-   - Navigate to Backend Folder.
+   - Navigate to the Backend Folder.
    - Run the command: pip install -r requirements.txt
    
 5. **4.1 Start Frontend Server**
-   - To start the React development server navigate to Frontend/frontend folder
+   - To start the React development server, navigate to the Frontend/frontend folder
    - Now, run: npm run dev
    
    **4.2 Start Backend Server**
-   - To start the backend server navigate to Backend folder and follow below commands:
+   - To start the backend server, navigate to the Backend folder and follow the below commands:
         - cd app
         - python run.py
-   - To directly login use these credentials (which I already added into user table):
-        - username: kiran
-        - password: Zxcvb@0987
-   - If you want run your own instance from scratch:
-      - To create a db(like Users db in my case), insert necessary SQL commands and run:
-           - cd app (If you are not in app folder)
-           - python createdb.py (This creates a db named Users.db in same folder and also creates a table "user").
-           - Now, to insert a record user record, you can manually send username, email and password in body of POST API (URL: localhost:<port_no>/register)
-             using app like Postman API to mimic frontend registration (Because password will be hashed and stored in table).
-           - Note: Don't use spaces in between while giving username.
-      - To add dummy data, add data into energyData.csv which has following Columns:
+   - To directly login, use these credentials (which I already added to the user table):
+        - username: saikumar
+        - password: Zxsae@1001
+   - If you want to run your instance from scratch:
+      - To create a DB(like Users db in my case), insert necessary SQL commands and run:
+           - cd app (If you are not in the app folder)
+           - python createdb.py (This creates a db named Users.db in the same folder and also creates a table "user").
+           - Now, to insert a record user record, you can manually send a username, email, and password in the body of POST API (URL: localhost:<port_no>/register)
+             using an app like Postman API to mimic frontend registration (Because the password will be hashed and stored in a table).
+           - Note: Don't use spaces in between while giving a username.
+      - To add dummy data, add data into energyData.csv, which has the following Columns:
            - timestamp (In UTC format)
            - username (unique and not null)
            - energy_source (Can be Solar, Wind, Hydro, Other).
            - consumption (Units in KWh)
            - generation (Units in KWh)
-      - Once dummy data is added, run below command, to insert data into energy_data table:
-           - cd app (If you are not in app folder)
+      - Once dummy data is added, run the below command to insert data into the energy_data table:
+           - cd app (If you are not in the app folder)
            - python populate_db.py (Inserts csv data into energy_data table).
-      - Now navigate to app folder and run run.py to start the Backend Server.
+      - Now navigate to the app folder and run.py to start the Backend Server.
 
 
-Note: The applications should now be running at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file which is in the frontend's src folder).
+Note: The applications should now run at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file in the frontend's src folder).
 
 ## User Interface
 
-The React-based user interface provides a responsive and user-friendly experience. Users can register, log in, and access the interactive dashboard where they can explore energy consumption and generation data through visually appealing charts and graphs. These visualizations offer insights into renewable energy usage trends, helping users make informed decisions regarding their energy consumption.
+The React-based user interface provides a responsive and user-friendly experience. Users can register, log in, and access the interactive dashboard to explore energy consumption and generation data through visually appealing charts and graphs. These visualizations offer insights into renewable energy usage trends, helping users make informed decisions regarding their energy consumption.
 
 ## API and Data Storage
 
@@ -113,7 +113,7 @@ The backend leverages Flask (a Python web framework) to create a RESTful API res
 
 ## Deployment
 
-The Dockerfile enables containerization for smooth deployment. Additionally, instructions will be provided for deploying the application and database to AWS services, ensuring scalability and security. HTTPS will be implemented to further enhance security during deployment.
+The Dockerfile enables containerization for smooth deployment. Additionally, instructions will be provided for deploying the application and database to AWS services, ensuring scalability and security. HTTPS will be implemented to enhance protection during deployment further.
 
 ## Git CI/CD
 
