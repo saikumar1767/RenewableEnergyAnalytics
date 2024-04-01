@@ -84,7 +84,7 @@ def register():
 
         # Check if username or email already exists
         if User.query.filter_by(username=username).first() or User.query.filter_by(email=email).first():
-            return jsonify({"error": "Username or email already exists"}), 400
+            return jsonify({"message": "Username or email already exists"}), 400
 
         # Hash the password
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
@@ -103,58 +103,70 @@ def register():
 # Endpoint for user login
 @app.route('/login', methods=['POST'])
 def login():
-    data = request.json
-    username = data.get('username')
-    password = data.get('password')
+    try:
+        data = request.json
+        username = data.get('username')
+        password = data.get('password')
 
-    # Check if user exists
-    user = User.query.filter_by(username=username).first()
+        # Check if user exists
+        user = User.query.filter_by(username=username).first()
 
-    if user and bcrypt.check_password_hash(user.password, password):
-        # You can generate JWT token here
-        token = generate_jwt_token(user.username)
-        return jsonify({"token": token, "user": user.username }), 200
-    else:
-        return jsonify({"error": "Invalid username or password"}), 401
+        if user and bcrypt.check_password_hash(user.password, password):
+            # You can generate JWT token here
+            token = generate_jwt_token(user.username)
+            return jsonify({"token": token, "user": user.username }), 200
+        else:
+            return jsonify({"error": "Invalid username or password"}), 401
+    except:
+        return jsonify({"message": "Internal Server Error"}), 500
+
 
 @app.route('/energy/user', methods=['GET'])
 @login_required
 def get_energy_data():
-    # Fetch energy data for the logged-in user
-    energy_data = EnergyData.query.filter_by(username=g.username).all()
-    # Serialize the data
-    data = [{'id': entry.id, 'username': entry.username, 'energy_source': entry.energy_source, 'consumption': entry.consumption, 'generation': entry.generation, 'timestamp': entry.timestamp} for entry in energy_data]
-    return data, 200
+    try:
+        # Fetch energy data for the logged-in user
+        energy_data = EnergyData.query.filter_by(username=g.username).all()
+        # Serialize the data
+        data = [{'id': entry.id, 'username': entry.username, 'energy_source': entry.energy_source, 'consumption': entry.consumption, 'generation': entry.generation, 'timestamp': entry.timestamp} for entry in energy_data]
+        return data, 200
+    except:
+        return jsonify({"message": "Internal Server Error"}), 500
+
 
 @app.route('/energy/filter', methods=['GET'])
 @login_required
 def filter_energy_data():
-    # Get query parameters
-    start_datetime = request.args.get('start_datetime')
-    end_datetime = request.args.get('end_datetime')
-    energy_source = request.args.get('energy_source')
-    energy_data = []
+    try:
+        # Get query parameters
+        start_datetime = request.args.get('start_datetime')
+        end_datetime = request.args.get('end_datetime')
+        energy_source = request.args.get('energy_source')
+        energy_data = []
 
-    if start_datetime is None or end_datetime is None:
-        # Fetch energy data for the logged-in user based on filters
-        energy_data = EnergyData.query.filter(EnergyData.username == g.username)
+        if start_datetime is None or end_datetime is None:
+            # Fetch energy data for the logged-in user based on filters
+            energy_data = EnergyData.query.filter(EnergyData.username == g.username)
 
-    else:
-        # Parse dates
-        start_dateT = datetime.strptime(start_datetime, "%Y-%m-%dT%H:%M:%S")
-        end_dateT = datetime.strptime(end_datetime, "%Y-%m-%dT%H:%M:%S")
+        else:
+            # Parse dates
+            start_dateT = datetime.strptime(start_datetime, "%Y-%m-%dT%H:%M:%S")
+            end_dateT = datetime.strptime(end_datetime, "%Y-%m-%dT%H:%M:%S")
 
-        # Fetch energy data for the logged-in user based on filters
-        energy_data = EnergyData.query.filter(EnergyData.timestamp >= start_dateT, EnergyData.timestamp <= end_dateT, EnergyData.username == g.username)
+            # Fetch energy data for the logged-in user based on filters
+            energy_data = EnergyData.query.filter(EnergyData.timestamp >= start_dateT, EnergyData.timestamp <= end_dateT, EnergyData.username == g.username)
 
-    if energy_source != "all":
-        energy_data = energy_data.filter_by(energy_source=energy_source)
+        if energy_source != "all":
+            energy_data = energy_data.filter_by(energy_source=energy_source)
 
-    energy_data = energy_data.all()
+        energy_data = energy_data.all()
 
-    # Serialize the data
-    data = [{'username': entry.username, 'timestamp': entry.timestamp, 'energy_source': entry.energy_source, 'consumption': entry.consumption, 'generation': entry.generation} for entry in energy_data]
-    return jsonify(data), 200
+        # Serialize the data
+        data = [{'username': entry.username, 'timestamp': entry.timestamp, 'energy_source': entry.energy_source, 'consumption': entry.consumption, 'generation': entry.generation} for entry in energy_data]
+        return jsonify(data), 200
+    except:
+        return jsonify({"message": "Internal Server Error"}), 500
+
 
 @app.route('/')
 def home_page():
