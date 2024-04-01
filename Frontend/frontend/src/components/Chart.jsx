@@ -12,18 +12,18 @@ function Chart() {
   const token = localStorage.getItem("token");
   const months = [
     "",
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
   const [loading, setIsLoading] = useState(true);
   const [energyData, setEnergyData] = useState(null);
@@ -65,7 +65,7 @@ function Chart() {
             let month = DateObj.getMonth();
             return {
               ...row,
-              month: months[month],
+              date: months[month] + " " + DateObj.getFullYear(),
             };
           });
           setEnergyData(modifiedData);
@@ -98,7 +98,7 @@ function Chart() {
       categories:
         energyData &&
         energyData.length > 0 &&
-        energyData.map((entry) => entry.month),
+        energyData.map((entry) => entry.date),
     },
     yAxis: {
       title: {
@@ -214,7 +214,7 @@ function Chart() {
             let month = DateObj.getMonth();
             return {
               ...row,
-              month: months[month],
+              date: months[month] + " " + DateObj.getFullYear(),
             };
           });
           setEnergyData(modifiedData);

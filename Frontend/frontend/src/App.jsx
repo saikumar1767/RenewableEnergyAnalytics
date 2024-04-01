@@ -6,10 +6,12 @@ import Home from "./pages/Home";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { jwtDecode } from "jwt-decode";
 import Layout from "./Layout";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext(null);
 
 function App() {
+  const navigate = useNavigate();
   const [authState, setAuthState] = useState({
     isLoggedIn: false,
     user: null,
@@ -28,7 +30,6 @@ function App() {
     try {
       const decodedToken = jwtDecode(token);
       const currentTime = Date.now() / 1000; // Current time in seconds
-      console.log("checking");
 
       if (decodedToken.exp < currentTime) {
         // Token expired, log out the user
@@ -74,8 +75,10 @@ function App() {
 
   // Logout Handler
   const handleLogout = () => {
+    console.log("Logged out!");
     setAuthState({ isLoggedIn: false, user: null, token: null });
     localStorage.clear();
+    navigate("/login");
   };
 
   return (

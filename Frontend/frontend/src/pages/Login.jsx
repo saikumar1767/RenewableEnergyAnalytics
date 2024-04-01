@@ -41,7 +41,7 @@ const Login = () => {
       .then((res) => {
         if (res.status === 200) {
           handleLogin(res.data);
-          setSuccess("Login successful!\n Redirecting to Home!");
+          setSuccess("Login successful! Redirecting to Dashboard!");
           setTimeout(async () => {
             setSuccess("");
             await navigate("/");
@@ -68,7 +68,7 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="w-full grid place-content-center bg-white">
-        <section className="text-[1.5rem] py-14 px-2 sm:px-10 border border-gray-400 bg-zinc-100 max-w-screen-md">
+        <section className="text-[1.5rem] py-14 px-2 sm:px-10 border rounded-lg border-gray-400 bg-zinc-100 max-w-screen-md">
           <h1 className="font-bold text-[2rem] text-blue-800 mb-8">
             Login
             <br />
@@ -98,7 +98,9 @@ const Login = () => {
               required
               className="outline-none border border-gray-400 pl-2"
             />
-            <button className={`bg-black cursor-pointer text-white mt-8 btn`}>
+            <button
+              className={`bg-black cursor-pointer text-white mt-8 btn p-1 rounded-lg`}
+            >
               Login
             </button>
           </form>
@@ -136,9 +138,9 @@ const Login = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 >
                   <path d="M18 6 6 18" />
                   <path d="m6 6 12 12" />
@@ -153,7 +155,7 @@ const Login = () => {
           id="dismiss-toast"
           className="absolute bottom-4 start-4 max-w-xs bg-green-100 border border-green-200 text-sm text-green-800 rounded-lg dark:bg-green-800/10 dark:border-green-900 dark:text-green-500"
           role="alert"
-          style={{ whiteSpace: "pre-line" }}
+          style={{ whiteSpace: "nowrap" }}
         >
           <div className="flex p-4">
             {success}
@@ -172,9 +174,9 @@ const Login = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 >
                   <path d="M18 6 6 18" />
                   <path d="m6 6 12 12" />

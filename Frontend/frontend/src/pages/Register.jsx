@@ -73,7 +73,7 @@ const Regsiter = () => {
       })
       .then((res) => {
         if (res.status === 201) {
-          setSuccess("User Registration successful!\n Redirecting to Login!");
+          setSuccess("User Registration successful! Redirecting to Login!");
           setTimeout(async () => {
             await setSuccess("");
             await navigate("/login");
@@ -106,7 +106,7 @@ const Regsiter = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="w-full grid place-content-center bg-white">
-        <section className="text-[1.5rem] py-14 px-2 sm:px-10 border border-gray-400 bg-zinc-100 max-w-screen-md">
+        <section className="text-[1.5rem] py-14 px-2 sm:px-10 border rounded-lg border-gray-400 bg-zinc-100 max-w-screen-md">
           <h1 className="font-bold text-[2rem] text-blue-800 mb-8">
             Register
             <br />
@@ -251,7 +251,7 @@ const Regsiter = () => {
                 validName && validPwd && validEmail
                   ? "bg-black"
                   : " bg-gray-600"
-              } text-white mt-8 btn`}
+              } text-white mt-8 btn p-1 rounded-lg`}
             >
               Register
             </button>
@@ -290,9 +290,9 @@ const Regsiter = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 >
                   <path d="M18 6 6 18" />
                   <path d="m6 6 12 12" />
@@ -307,7 +307,7 @@ const Regsiter = () => {
           id="dismiss-toast"
           className="absolute bottom-4 start-4 max-w-xs bg-green-100 border border-green-200 text-sm text-green-800 rounded-lg dark:bg-green-800/10 dark:border-green-900 dark:text-green-500"
           role="alert"
-          style={{ whiteSpace: "pre-line" }}
+          style={{ whiteSpace: "nowrap" }}
         >
           <div className="flex p-4">
             {success}
@@ -326,9 +326,9 @@ const Regsiter = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 >
                   <path d="M18 6 6 18" />
                   <path d="m6 6 12 12" />

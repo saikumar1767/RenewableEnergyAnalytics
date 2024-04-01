@@ -12,18 +12,18 @@ function MultiAxesChart() {
   const token = localStorage.getItem("token");
   const months = [
     "",
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
   const [loading, setIsLoading] = useState(true);
   const [energyData, setEnergyData] = useState(null);
@@ -65,7 +65,7 @@ function MultiAxesChart() {
             let month = DateObj.getMonth();
             return {
               ...row,
-              month: months[month],
+              date: months[month] + " " + DateObj.getFullYear(),
             };
           });
           setEnergyData(modifiedData);
@@ -97,7 +97,7 @@ function MultiAxesChart() {
       categories:
         energyData &&
         energyData.length > 0 &&
-        energyData.map((entry) => entry.month),
+        energyData.map((entry) => entry.date),
     },
     yAxis: [
       {
@@ -303,7 +303,7 @@ function MultiAxesChart() {
             let month = DateObj.getMonth();
             return {
               ...row,
-              month: months[month],
+              date: months[month] + " " + DateObj.getFullYear(),
             };
           });
           setEnergyData(modifiedData);
