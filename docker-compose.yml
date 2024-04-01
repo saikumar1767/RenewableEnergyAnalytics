@@ -12,11 +12,11 @@ services:
 
   frontend:
     build:
-      context: ./Frontend/frontend
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./Frontend/frontend:/app
+      - ./frontend:/app
     depends_on:
       - backend

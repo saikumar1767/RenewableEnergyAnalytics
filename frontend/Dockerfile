@@ -1,5 +1,5 @@
 # Use the official Node.js image as base image
-FROM node:14-alpine
+FROM node:latest
 
 # Set the working directory in the container
 WORKDIR /app
@@ -9,6 +9,9 @@ COPY . .
 
 # Install dependencies
 RUN npm install
+
+# Install Vite
+RUN npm install vite
 
 # Expose the port on which the React application will run
 EXPOSE 3000
