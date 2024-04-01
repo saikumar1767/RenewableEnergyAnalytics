@@ -5,18 +5,17 @@ services:
     build:
       context: ./Backend
       dockerfile: Dockerfile
-    ports:
-      - "5000:5000"
     volumes:
       - ./Backend:/app
+    ports:
+      - "5000:5000"
 
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
+      args:
+        NODE_ENV: "development"
     volumes:
       - ./frontend:/app
-    depends_on:
-      - backend
+    ports:
+      - "3000:3000"

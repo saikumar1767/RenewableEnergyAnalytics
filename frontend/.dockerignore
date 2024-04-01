@@ -1,4 +1,0 @@
-# Exclude development and editor-specific files
-node_modules
-*.log
-.vscode/

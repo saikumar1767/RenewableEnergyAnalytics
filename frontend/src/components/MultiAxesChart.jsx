@@ -27,9 +27,6 @@ function MultiAxesChart() {
   ];
   const [loading, setIsLoading] = useState(true);
   const [energyData, setEnergyData] = useState(null);
-  const [chartType, setChartType] = useState(
-    localStorage.getItem("mchartType") ?? "line"
-  );
   const [energyType, setEnergyType] = useState(
     localStorage.getItem("menergyType") ?? "all"
   );
@@ -276,11 +273,6 @@ function MultiAxesChart() {
         },
       ],
     },
-  };
-
-  const changeChartType = (event) => {
-    setChartType(event.target.value);
-    localStorage.setItem("mchartType", event.target.value);
   };
 
   const makeAPICall = async (startDate, endDate, energyType) => {
