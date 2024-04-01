@@ -92,7 +92,7 @@ function MultiAxesChart() {
     },
     xAxis: {
       title: {
-        text: "Month",
+        text: "Timestamp",
       },
       categories:
         energyData &&
@@ -162,12 +162,12 @@ function MultiAxesChart() {
                 }
                 ${
                   this.series.name === "Consumption"
-                    ? `Consumption: ${this.y}`
+                    ? `Consumption: ${this.y} KWh`
                     : ""
                 }
                 ${
                   this.series.name === "Generation"
-                    ? `Generation: ${this.y}`
+                    ? `Generation: ${this.y} KWh`
                     : ""
                 }
                 <br/>
