@@ -15,7 +15,7 @@ The objective of this project is to create a user-friendly web application that 
 
 1. **User Authentication:**
    - Implemented user registration and login functionality.
-   - Secured user passwords using proper hashing techniques, using bcrypt.
+   - Secured user passwords using proper hashing techniques, using bcrypt with SHA 256.
    - I used JWT (JSON Web Tokens) to handle authenticated sessions after login and logging out to the user as token expiry is set to 1 day.
 
 2. **Front-End:**
@@ -99,7 +99,7 @@ The objective of this project is to create a user-friendly web application that 
            - cd app (If you are not in the app folder)
            - python populate_db.py (Inserts csv data into energy_data table).
       - Now navigate to the app folder and run.py to start the Backend Server.
-      - 
+
 6. **Deployment using Docker**
    - Create two docker files, one inside the frontend folder for dockerizing the application's frontend and a second docker file inside the Backend folder for dockerizing the application's backend.
    - Next, create the docker-compose file directly under the root folder (same directory as this README file).
