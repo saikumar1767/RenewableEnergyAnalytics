@@ -75,7 +75,6 @@ function App() {
 
   // Logout Handler
   const handleLogout = () => {
-    console.log("Logged out!");
     setAuthState({ isLoggedIn: false, user: null, token: null });
     localStorage.clear();
     navigate("/login");
