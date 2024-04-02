@@ -327,7 +327,7 @@ const Regsiter = () => {
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                 >
                   <path d="M18 6 6 18" />
