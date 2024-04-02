@@ -12,7 +12,7 @@ from flask_cors import CORS
 current_directory = os.path.dirname(os.path.realpath(__file__))
 
 # The absolute path to the Secret_Key.txt file
-secret_key_file_path = os.path.join(current_directory, "Secret_Key.txt")
+secret_key_file_path = os.path.join(current_directory, "app/Secret_Key.txt")
 
 with open(secret_key_file_path, "r") as file:
     # Read the content of the file
@@ -21,7 +21,8 @@ with open(secret_key_file_path, "r") as file:
 secret_key = text_content
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(os.getcwd(), 'users.db')  # Using SQLite
+db_path = os.path.join(app.root_path, 'app/users.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path  # Using SQLite
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = secret_key  # Secret key for JWT token generation
 CORS(app)
