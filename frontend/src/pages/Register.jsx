@@ -305,7 +305,7 @@ const Regsiter = () => {
       {success && success.length > 0 && (
         <div
           id="dismiss-toast"
-          className="absolute bottom-4 start-4 max-w-xs bg-green-100 border border-green-200 text-sm text-green-800 rounded-lg dark:bg-green-800/10 dark:border-green-900 dark:text-green-500"
+          className="absolute bottom-4 start-4 max-w-sm bg-green-100 border border-green-200 text-sm text-green-800 rounded-lg dark:bg-green-800/10 dark:border-green-900 dark:text-green-500"
           role="alert"
           style={{ whiteSpace: "nowrap" }}
         >
