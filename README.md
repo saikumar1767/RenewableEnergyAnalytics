@@ -99,9 +99,9 @@ The objective of this project is to create a user-friendly web application that 
            - cd app (If you are not in the app folder)
            - python populate_db.py (Inserts csv data into energy_data table).
       - Now navigate to the app folder and run.py to start the Backend Server.
-   Note: You might see two user.db files, one is outside the app folder, and the other is inside the app folder. For the local running instance, it is pointed to user.db, which is inside the app folder, and for 
-         docker deployment, the environments are changing, so when working with Docker, its instance will be pointed to the user.db file, which is outside the app folder. Make sure the user.db file is properly 
-         set-up and has data before making API calls.
+Note: You might see two user.db files, one is outside the app folder, and the other is inside the app folder. For the local running instance, it is pointed to user.db, which is inside the app folder, and for 
+      docker deployment, the environments are changing, so when working with Docker, its instance will be pointed to the user.db file, which is outside the app folder. Make sure the user.db file is properly 
+      set up and has data before making API calls.
 
 6. **Deployment using Docker**
    - Create two docker files, one inside the frontend folder for dockerizing the application's frontend and a second docker file inside the Backend folder for dockerizing the application's backend.
