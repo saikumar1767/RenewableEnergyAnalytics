@@ -73,7 +73,7 @@ The objective of this project is to create a user-friendly web application that 
    
 5. **4.1 Start Frontend Server**
    - To start the React development server, navigate to the Frontend/frontend folder
-   - Now, run: npm run dev
+   - Now, run: npm start
    
    **4.2 Start Backend Server**
    - To start the backend server, navigate to the Backend folder and follow the below commands:
