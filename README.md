@@ -1,6 +1,6 @@
 # Energy Consumption and Generation Visualization Web Application Documentation
 
-This project aims to develop a web application that visualizes energy consumption and generation data, providing users with insights into renewable energy usage and trends. Users can register, log in, and view personalized visualizations of energy data.
+This project aims to develop a web application that visualizes energy consumption and generation data, providing users with insights into renewable energy usage and trends. Users can register, log in, and view personalized visualizations of energy data. Live at: https://renewable.fit
 
 ## Objective
 
@@ -38,7 +38,7 @@ The objective of this project is to create a user-friendly web application that 
    - I made sure the application runs locally with the setup instructions below.
 
 6. **AWS Deployment:**
-   - Deployed the application and database to AWS using services like Elastic Beanstalk, EC2, RDS, or DynamoDB.
+   - Deployed the application and server to AWS using services like Elastic Beanstalk, EC2, S3, Route 53, and CloudFront.
    - Implemented HTTPS to secure application access.
 
 7. **Git CI/CD Pipeline:**
@@ -109,9 +109,13 @@ The objective of this project is to create a user-friendly web application that 
    Note: Make sure ports 3000 and 5000 are not being used by any other service on your PC.
 
 7. **AWS Deployment**
-   - 
+   - I have deployed the backend (Python-Flask) onto the AWS Elastic Beanstalk, which used the nginx server.
+   - Deployed the frontend onto the AWS S3 Bucket along with AWS CloudFront.
+   - Used Route 53 for enabling HTTPS using the SSL certificates for the domain that I brought.
+   - Now, both frontend and backend are deployed onto AWS; one can access the application at the URL: https://renewable.fit
+   - Added multiple resources as how I approached deploying on AWS.
 
-Note: The applications should now run at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file in the frontend's src folder).
+Note: In localhost, The applications should now run at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file in the frontend's src folder).
 
 ## User Interface
 
@@ -119,11 +123,11 @@ The React-based user interface provides a responsive and user-friendly experienc
 
 ## API and Data Storage
 
-The backend leverages Flask (a Python web framework) to create a RESTful API responsible for user authentication, data retrieval, and filtering. This API interacts with a secure database (specific instructions on database setup will be provided) to store user information and energy data.
+The backend leverages Flask (a Python web framework) to create a RESTful API responsible for user authentication, data retrieval, and filtering. This API uses a secure database to store user information and energy data.
 
 ## Deployment
 
-The Dockerfile enables containerization for smooth deployment. Additionally, instructions will be provided for deploying the application and database to AWS services, ensuring scalability and security. HTTPS will be implemented to enhance protection during deployment further.
+The Dockerfile enables containerization for smooth deployment. Instructions are provided above for deploying the application and server to AWS services, ensuring scalability and security. HTTPS is implemented to enhance protection during deployment.
 
 ## Git CI/CD
 
@@ -142,3 +146,11 @@ This project adheres to best practices by utilizing Git for version control and 
    - GitLab CI/CD: https://docs.gitlab.com/ee/ci/
    - Chart.js: https://www.chartjs.org/docs/latest/getting-started/
    - Highcharts: https://www.highcharts.com/
+   - https://www.youtube.com/watch?v=7djMZ5OTG_E
+   - https://www.youtube.com/watch?v=2BoVhej0QVI
+   - https://www.youtube.com/watch?v=eZOzTFOMh0I&t=1s
+   - https://www.youtube.com/watch?v=XOTsSJ8EOoY&t=886s
+   - https://www.youtube.com/watch?v=vpUwv8_w9GQ
+   - https://www.youtube.com/watch?v=ookzXuMr8eY
+   - https://www.youtube.com/watch?v=N-gzLmYLRRk
+   - https://www.youtube.com/watch?v=uWQ48da0UOc
