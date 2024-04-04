@@ -1,6 +1,8 @@
 # Energy Consumption and Generation Visualization Web Application Documentation
 
-This project aims to develop a web application that visualizes energy consumption and generation data, providing users with insights into renewable energy usage and trends. Users can register, log in, and view personalized visualizations of energy data. Live at: https://renewable.fit
+This project aims to develop a web application that visualizes energy consumption and generation data, providing users with insights into renewable energy usage and trends. Users can register, log in, and view personalized visualizations of energy data. 
+
+Live at: https://renewable.fit
 
 ## Objective
 
@@ -101,21 +103,21 @@ The objective of this project is to create a user-friendly web application that 
 
 6. **Deployment using Docker**
    - Create two docker files, one inside the frontend folder for dockerizing the application's frontend and a second docker file inside the Backend folder for dockerizing the application's backend.
-   - Next, create the docker-compose file directly under the root folder (same directory as this README file).
+   - Next, create the docker-compose file directly under the root folder (in the same directory as this README file).
    - To run locally, I have installed the docker desktop and opened the command prompt, pointed it to the root directory, where the docker-compose file is located, and run the below commands:
         - docker-compose build (To build the docker images with docker files located in the frontend and backend folder as mentioned in the docker-compose file).
         - docker-compose up (To build and start the containers from images created as mentioned in the docker-compose.yml file).
         - If ports are not changed, then the frontend service will be up and running on localhost port 3000, and the backend service will be up and running on localhost port 5000.
-   Note: Make sure ports 3000 and 5000 are not being used by any other service on your PC.
+   Note: Make sure ports 3000 and 5000 are not used by any other service on your PC.
 
 7. **AWS Deployment**
    - I have deployed the backend (Python-Flask) onto the AWS Elastic Beanstalk, which used the nginx server.
-   - Deployed the frontend onto the AWS S3 Bucket along with AWS CloudFront.
-   - Used Route 53 for enabling HTTPS using the SSL certificates for the domain that I brought.
+   - The front end was deployed onto the AWS S3 Bucket and the AWS CloudFront.
+   - I used Route 53 to enable HTTPS using the SSL certificates for the domain I bought.
    - Now, both frontend and backend are deployed onto AWS; one can access the application at the URL: https://renewable.fit
-   - Added multiple resources as how I approached deploying on AWS.
+   - I added multiple resources as I approached deploying on AWS.
 
-Note: In localhost, The applications should now run at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file in the frontend's src folder).
+Note: In localhost, The applications should run at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file in the frontend's src folder).
 
 ## User Interface
 
@@ -127,7 +129,7 @@ The backend leverages Flask (a Python web framework) to create a RESTful API res
 
 ## Deployment
 
-The Dockerfile enables containerization for smooth deployment. Instructions are provided above for deploying the application and server to AWS services, ensuring scalability and security. HTTPS is implemented to enhance protection during deployment.
+The Dockerfile enables containerization for smooth deployment. I've shared the instructions above for deploying the application and server to AWS services to ensure they are secure. HTTPS is implemented to enhance protection during deployment.
 
 ## Git CI/CD
 
