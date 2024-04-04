@@ -88,7 +88,7 @@ The objective of this project is to create a user-friendly web application that 
            - cd app (If you are not in the app folder)
            - python createdb.py (This creates a db named Users.db in the same folder and also creates a table "user").
            - Now, to insert a record user record, you can manually send a username, email, and password in the body of POST API (URL: localhost:<port_no>/register)
-             using an app like Postman API to mimic frontend registration (Because the password will be hashed and stored in a table).
+             Using an app like Postman API to mimic frontend registration (Because the password will be hashed and stored in a table).
            - Note: Don't use spaces in between while giving a username.
       - To add dummy data, add data into energyData.csv, which has the following Columns:
            - timestamp (In UTC format)
@@ -107,6 +107,7 @@ The objective of this project is to create a user-friendly web application that 
    - To run locally, I have installed the docker desktop and opened the command prompt, pointed it to the root directory, where the docker-compose file is located, and run the below commands:
         - docker-compose build (To build the docker images with docker files located in the frontend and backend folder as mentioned in the docker-compose file).
         - docker-compose up (To build and start the containers from images created as mentioned in the docker-compose.yml file).
+        - If you are getting any errors in the frontend, try to remove the node_modules folder and package-lock.json and try to re-install packages using npm install and then docker commands (both build & up).
         - If ports are not changed, then the frontend service will be up and running on localhost port 3000, and the backend service will be up and running on localhost port 5000.
    Note: Make sure ports 3000 and 5000 are not used by any other service on your PC.
 
