@@ -113,7 +113,7 @@ The objective of this project is to create a user-friendly web application that 
    - I have deployed the backend (Python-Flask) onto the AWS Elastic Beanstalk, which used the nginx server.
    - The front end was deployed onto the AWS S3 Bucket and the AWS CloudFront.
    - I used Route 53 to enable HTTPS using the SSL certificates for the domain I bought.
-   - Now, both frontend and backend are deployed onto AWS; one can access the application at the URL: https://renewable.fit
+   - Now, both frontend and backend are deployed onto AWS.
    - I added multiple resources as I approached deploying on AWS.
 
 Note: In localhost, The applications should run at two different ports (or a different port if specified, so please add the backend endpoint into the Utils file in the frontend's src folder).
